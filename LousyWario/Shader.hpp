@@ -44,7 +44,7 @@ void CompileShader(GLuint& shader, const std::string src) {
         char infoLog[512];
         glGetShaderInfoLog(shader, 512, NULL, infoLog);
 
-        std::cout << infoLog << "\n";
+        std::cout << "\033[31m" << infoLog << "\n SRC: " << "\032[0m\n" << src << "\033[0m\n";
     }
 }
 
@@ -52,6 +52,27 @@ Shader CreateShader(char* vertexPath, char* fragPath) {
     Shader shader;
 
     shader.program = glCreateProgram();
-    shader.vertex = glcreatevert
+    shader.vertex = glCreateShader(GL_VERTEX_SHADER);
+    shader.fragment = glCreateShader(GL_FRAGMENT_SHADER);
 
+    std::string vertexSRC = ReadFile(vertexPath);
+    std::string fragSRC = ReadFile(fragPath);
+
+    CompileShader(shader.vertex, vertexSRC);
+    CompileShader(shader.fragment, fragSRC);
+
+    glAttachShader(shader.program, shader.vertex);
+    glAttachShader(shader.program, shader.fragment);
+    glLinkProgram(shader.program);
+
+    int success;
+    glGetProgramiv(shader.program, GL_LINK_STATUS, &success);
+    if (!success) {
+        char infoLog[512];
+        glGetProgramInfoLog(shader.program, 512, 0, infoLog);
+        std::cout << "\033[31m\n" << "WARNING: failed to link " << "\033[32m\n" << vertexSRC << "\031[31m\n" << " and " <<
+            "\033[32m\n" << fragSRC << "\033[0m\n";
+    }
+
+    return shader;
 }

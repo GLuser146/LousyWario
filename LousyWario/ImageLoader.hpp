@@ -39,5 +39,5 @@ GLuint LoadImage(char* path){
 
 
 	stbi_image_free(data);
-
+	return texture;
 }
