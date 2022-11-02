@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\minec\OneDrive\Documents\Libs\glm\CMakeFiles\f160326e0ecc0c0b1c44aa24bf52aa69\PACKAGE_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{62C7255D-4272-3B7D-997E-29CF3CEC4F51}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

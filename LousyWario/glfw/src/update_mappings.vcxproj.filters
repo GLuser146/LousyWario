@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\minec\OneDrive\Documents\Libs\glfw\CMakeFiles\0c78fff305dbceb31d772cf3d442f151\update_mappings.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\minec\OneDrive\Documents\Libs\glfw\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\minec\OneDrive\Documents\Libs\glfw\src\mappings.h.in">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="C:\Users\minec\OneDrive\Documents\Libs\glfw\CMake\GenerateMappings.cmake" />
+    <None Include="C:\Users\minec\OneDrive\Documents\Libs\glfw\src\CMakeFiles\update_mappings" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{6F660803-FBE4-32B2-B9B3-78776A9B6F43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{4182E78F-AB89-32A9-94A3-F0A1E3271CFD}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
