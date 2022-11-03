@@ -17,3 +17,15 @@ typedef struct Collider {
 
 	float bbox_topleft, bbox_topright, bbox_bottomleft, bbox_bottomright;
 };
+
+float cubeVertces[8] = {
+	-0.5, -0.5,
+	-0.5,  0.5,
+	 0.5, -0.5,
+	 0.5,  0.5
+};
+
+unsigned int cubeIndices[6] = {
+	0, 1, 2,
+	1, 2, 3
+};

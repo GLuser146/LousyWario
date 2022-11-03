@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "Object.hpp"
+#include "Shader.hpp"
 
 #include "glad.h"
 #include <GLFW/glfw3.h>
@@ -12,9 +13,11 @@
 class Player {
 public:
 	Player();
-	Draw();
+	void Draw();
+
 	Collider collider;
 private:
 	Object object;
+	Shader shader;
 
 };
