@@ -1,9 +1,11 @@
 #pragma once
 
 #include <iostream>
+#include <functional>
 
 #include "Object.hpp"
 #include "Shader.hpp"
+#include "Window.hpp"
 
 #include "glad.h"
 #include <GLFW/glfw3.h>
@@ -13,7 +15,7 @@
 class Player {
 public:
 	Player();
-	void Draw();
+	std::function<void()> Draw();
 
 	Collider collider;
 private:

@@ -6,6 +6,7 @@
 
 #include "Window.hpp"
 #include "GameManager.hpp"
+#include "Object.hpp"
 
 
 
@@ -18,3 +19,17 @@ void GameManager::MainLoop() {
 		glfwPollEvents();
 	}
 }
+
+////IGNORE
+float cubeVertices[8] = {
+	-0.5, -0.5,
+	-0.5,  0.5,
+	 0.5, -0.5,
+	 0.5,  0.5
+};
+
+unsigned int cubeIndices[6] = {
+	0, 1, 2,
+	1, 2, 3
+};
+/////

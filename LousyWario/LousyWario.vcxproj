@@ -136,6 +136,7 @@
     <ClCompile Include="glad.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +150,10 @@
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="Shader.hpp" />
     <ClInclude Include="Window.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="player.frag" />
+    <None Include="player.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

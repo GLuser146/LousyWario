@@ -22,7 +22,9 @@ void Window::Draw() {
 		drawList[i]();
 	}
 	glfwSwapBuffers(window);
+
 }
 void Window::AddToDrawList(std::function<void()> func) {
 	drawList.push_back(func);
+	printf("nananananananananana\n");
 }

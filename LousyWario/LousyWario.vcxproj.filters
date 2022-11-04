@@ -16,6 +16,9 @@
     <Filter Include="Externals">
       <UniqueIdentifier>{721ef217-7699-4245-8063-6dd95e00218b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{bc6d237e-bc60-4a81-b897-cdd8f9e3569d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -31,6 +34,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -65,5 +71,13 @@
     <ClInclude Include="Shader.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="player.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="player.frag">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

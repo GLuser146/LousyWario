@@ -5,11 +5,11 @@
 
 typedef struct Object {
 	GLuint VBO, VAO, EBO, textureVBO;
-}Object;
+};
 
 typedef struct InstancedObject {
 	GLuint VBO, VAO, EBO, textureVBO, instanceVBO;
-}InstancedObject;
+};
 
 typedef struct Collider {
 	glm::vec2 pos;
@@ -18,14 +18,6 @@ typedef struct Collider {
 	float bbox_topleft, bbox_topright, bbox_bottomleft, bbox_bottomright;
 };
 
-float cubeVertces[8] = {
-	-0.5, -0.5,
-	-0.5,  0.5,
-	 0.5, -0.5,
-	 0.5,  0.5
-};
+extern float cubeVertices[8];
 
-unsigned int cubeIndices[6] = {
-	0, 1, 2,
-	1, 2, 3
-};
+extern unsigned int cubeIndices[6];
