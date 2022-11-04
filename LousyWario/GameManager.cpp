@@ -12,6 +12,10 @@
 
 GameManager gameManager = GameManager();
 
+GameManager::GameManager() {
+	player = Player();
+}
+
 void GameManager::MainLoop() {
 	while (!glfwWindowShouldClose(window.window)) {
 		window.Draw();

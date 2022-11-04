@@ -11,7 +11,7 @@
 
 class GameManager {
 public:
-	GameManager(){};
+	GameManager();
 	void MainLoop();
 
 	Player player;

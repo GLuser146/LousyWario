@@ -25,11 +25,8 @@ Player::Player() {
 	glGenBuffers(1, &object.EBO);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, object.EBO);
 
-	//glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(cubeIndices), cubeIndices, GL_STATIC_DRAW);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(cubeIndices), cubeIndices, GL_STATIC_DRAW);
 
-	shader = CreateShader((char*)"player.vert", (char*)"player.frag");
-
-	window.AddToDrawList(Draw());
 }
 
 std::function<void()> Player::Draw() {
