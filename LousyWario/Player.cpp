@@ -32,7 +32,7 @@ Player::Player() {
 	shader = CreateShader((char*)("player.vert"), (char*)("player.frag"));
 
 	window.AddToDrawList(std::bind(&Player::Draw, this));
-
+	
 	sizeMultiplier = 0.1;
 
 	collider.size.x = 0.75 * sizeMultiplier;
