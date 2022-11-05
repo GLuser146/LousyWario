@@ -27,11 +27,26 @@ Player::Player() {
 
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(cubeIndices), cubeIndices, GL_STATIC_DRAW);
 
+	glEnableVertexAttribArray(0);
+
+	shader = CreateShader((char*)("player.vert"), (char*)("player.frag"));
+
+	window.AddToDrawList(std::bind(&Player::Draw, this));
+
+	sizeMultiplier = 0.1;
+
+	collider.size.x = 0.75 * sizeMultiplier;
+	collider.size.y = 2 * sizeMultiplier;
+
 }
 
-std::function<void()> Player::Draw() {
+void Player::Draw() {
 	glUseProgram(shader.program);
 	glBindVertexArray(object.VAO);
-	glDrawElements(GL_TRIANGLES, 2, GL_UNSIGNED_INT, 0);
-	return 0;
+
+	//uniforms
+	glUniform2fv(glGetUniformLocation(shader.program, "uSize"), 1, glm::value_ptr(collider.size));
+
+
+	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 }

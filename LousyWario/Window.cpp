@@ -26,5 +26,4 @@ void Window::Draw() {
 }
 void Window::AddToDrawList(std::function<void()> func) {
 	drawList.push_back(func);
-	printf("nananananananananana\n");
 }

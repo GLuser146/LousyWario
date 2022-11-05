@@ -10,8 +10,6 @@
 
 
 
-GameManager gameManager = GameManager();
-
 GameManager::GameManager() {
 	player = Player();
 }

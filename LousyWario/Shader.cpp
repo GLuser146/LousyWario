@@ -29,10 +29,8 @@ std::string ReadFile(char* path) {
 }
 
 void CompileShader(GLuint& shader, const std::string src) {
-    char* srcC = (char*)malloc(sizeof(char) * (src.length() + 1));
-    if (srcC) {
-        strcpy_s(srcC, src.size() * sizeof(char), src.c_str());
-    }
+    const char* srcC = src.c_str();
+  
 
     glShaderSource(shader, 1, (const GLchar* const*)&srcC, NULL);
     glCompileShader(shader);

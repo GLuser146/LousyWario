@@ -15,11 +15,12 @@
 class Player {
 public:
 	Player();
-	std::function<void()> Draw();
+	void Draw();
 
 	Collider collider;
 private:
 	Object object;
 	Shader shader;
 
+	float sizeMultiplier;
 };

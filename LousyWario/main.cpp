@@ -10,6 +10,8 @@
 int main() {
 	InitAPI();
 
+	GameManager gameManager;
+
 	gameManager.MainLoop();
 
 	return 0;

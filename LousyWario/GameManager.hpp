@@ -17,5 +17,3 @@ public:
 	Player player;
 private:
 };
-
-extern GameManager gameManager;
