@@ -18,9 +18,10 @@ Window::Window(char* title, int width, int height) {
 
 void Window::Draw() {
 	glClear(GL_COLOR_BUFFER_BIT);
-	for (int i = 0; i < drawList.size(); i++) {
+	for (int i = 0; i < drawList.size(); i += 2) {
 		drawList[i]();
 	}
+
 	glfwSwapBuffers(window);
 
 }

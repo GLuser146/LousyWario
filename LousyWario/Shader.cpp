@@ -42,7 +42,7 @@ void CompileShader(GLuint& shader, const std::string src) {
         char infoLog[512];
         glGetShaderInfoLog(shader, 512, NULL, infoLog);
 
-        std::cout << "\033[31m" << infoLog << "\n SRC: " << "\032[0m\n" << src << "\033[0m\n";
+        std::cout << "\033[31m" << infoLog << "\033[0m\n";
     }
 }
 

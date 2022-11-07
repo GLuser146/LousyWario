@@ -7,6 +7,8 @@
 #include <conio.h>
 
 #include "Window.hpp"
+#include "GameManager.hpp"
+#include "InputManager.hpp"
 
 void InitAPI() {
 	if (!glfwInit()) {
@@ -32,4 +34,9 @@ void InitAPI() {
 
 	glViewport(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 	glClearColor(0.0, 1.0, 1.0, 1.0);
+
+	glfwSetKeyCallback(window.window, KeyCallback);
+
+	glfwSwapInterval(0);
+
 }

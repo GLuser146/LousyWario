@@ -1,10 +1,13 @@
 
 #include <iostream>
 #include <functional>
+#include <algorithm>
+#include <cmath>
 
 #include "Object.hpp"
 #include "Window.hpp"
 #include "Player.hpp"
+#include "InputManager.hpp"
 
 #include "glad.h"
 #include <GLFW/glfw3.h>
@@ -46,7 +49,27 @@ void Player::Draw() {
 
 	//uniforms
 	glUniform2fv(glGetUniformLocation(shader.program, "uSize"), 1, glm::value_ptr(collider.size));
+	glUniform2fv(glGetUniformLocation(shader.program, "uOffset"), 1, glm::value_ptr(collider.pos));
 
 
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+}
+
+void Player::Movement() {
+	if (keys[MOVE_LEFT]>0) {
+		dir.x -= acc;
+	}
+	if (keys[MOVE_RIGHT]>0) {
+		dir.x += acc;
+
+		
+	}
+
+	dir.x = std::clamp(dir.x, -maxDirX, maxDirX);
+
+	if (!keys[MOVE_LEFT] && !keys[MOVE_RIGHT]) {
+		dir.x = std::lerp(dir.x, 0, deAcc);
+	}
+
+	collider.pos.x += dir.x / 1000;
 }
