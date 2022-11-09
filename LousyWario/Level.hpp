@@ -20,7 +20,7 @@ public:
 
 	int xSize, ySize;
 private:
-	std::vector<std::vector<char>> levelDat;
+	char** levelDat;
 	InstancedObject object;
 	Shader shader;
 

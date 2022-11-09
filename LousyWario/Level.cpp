@@ -11,27 +11,34 @@
 Level::Level(char* path, int xSize, int ySize) {
 	// LOADING THE LEVEL
 	std::string level = ReadFile(path);
-	unsigned int atX = 0;
-	unsigned int atY = 0;
 
-	for (int x = 0; x < xSize+1; x++) {
-		for (int y = 0; y < ySize+1; y++) {
-			if (level[x * y] != '\n') {
-				levelDat[xSize].push_back(level[x * y]);
+	levelDat = new char* [xSize-1];
+
+	int atIndex = 0;
+	for (int x = 0; x < xSize; x++) {
+		for (int y = 0; y < ySize+1; y++){
+			if(level[atIndex] != '\n'){
+				levelDat[x] = new char[y];
+				levelDat[x][y] = level[atIndex];
 			}
-			
+			atIndex++;
+
 		}
 	}
 
-	for (int x = 0; x < xSize+1; x++) {
-		for (int y = 0; y < ySize+1; y++) {
-				if (levelDat[x][y] != AIR && levelDat[x][y] != '\n') {
+
+	for (int x = 0; x < xSize; x++) {
+		for (int y = 0; y < ySize + 1; y++) {
+				if (levelDat[x][y] != AIR) {
 					blockDat.push_back(x * BLOCK_SIZE);
 					blockDat.push_back(y * BLOCK_SIZE);
 
 					blockDat.push_back(levelDat[x][y]);
 				}
 		}
+	}
+	for (int i = 0; i < blockDat.size(); i++) {
+		printf("%i\n", blockDat[i]);
 	}
 	////////
 	glGenVertexArrays(1, &object.VAO);
