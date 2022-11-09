@@ -34,6 +34,6 @@ private:
 
 	float acc = 1;
 	float deAcc = 0.1;
-	float maxDirX = 5;
+	float maxDirX = 10;
 
 };

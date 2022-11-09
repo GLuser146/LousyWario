@@ -12,13 +12,13 @@ Level::Level(char* path, int xSize, int ySize) {
 	// LOADING THE LEVEL
 	std::string level = ReadFile(path);
 
-	levelDat = new char* [xSize-1];
+	levelDat = new char* [xSize];
 
 	int atIndex = 0;
 	for (int x = 0; x < xSize; x++) {
+		levelDat[x] = new char[ySize];
 		for (int y = 0; y < ySize+1; y++){
 			if(level[atIndex] != '\n'){
-				levelDat[x] = new char[y];
 				levelDat[x][y] = level[atIndex];
 			}
 			atIndex++;
@@ -33,13 +33,20 @@ Level::Level(char* path, int xSize, int ySize) {
 					blockDat.push_back(x * BLOCK_SIZE);
 					blockDat.push_back(y * BLOCK_SIZE);
 
-					blockDat.push_back(levelDat[x][y]);
+					switch (levelDat[x][y]) {
+					case DIRT:
+						blockDat.push_back(0);
+						break;
+					default:
+						blockDat.push_back(-1);
+						break;
+
+					}
 				}
 		}
 	}
-	for (int i = 0; i < blockDat.size(); i++) {
-		printf("%i\n", blockDat[i]);
-	}
+
+
 	////////
 	glGenVertexArrays(1, &object.VAO);
 	glBindVertexArray(object.VAO);

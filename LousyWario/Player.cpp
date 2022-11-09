@@ -70,6 +70,5 @@ void Player::Movement() {
 	if (!keys[MOVE_LEFT] && !keys[MOVE_RIGHT]) {
 		dir.x = std::lerp(dir.x, 0, deAcc);
 	}
-
 	collider.pos.x += dir.x / 1000;
 }
