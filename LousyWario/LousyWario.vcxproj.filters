@@ -19,6 +19,9 @@
     <Filter Include="Shaders">
       <UniqueIdentifier>{bc6d237e-bc60-4a81-b897-cdd8f9e3569d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Levels">
+      <UniqueIdentifier>{54e651a8-aa04-4beb-8739-d8aa2ede4105}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -91,5 +94,16 @@
     <None Include="player.frag">
       <Filter>Shaders</Filter>
     </None>
+    <None Include="block.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="block.frag">
+      <Filter>Shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="1.txt">
+      <Filter>Levels</Filter>
+    </Text>
   </ItemGroup>
 </Project>

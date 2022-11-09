@@ -3,6 +3,7 @@
 #include "Initializer.hpp"
 #include "GameManager.hpp"
 #include "ImageLoader.hpp"
+#include "Level.hpp"
 
 #include "glad.h"
 #include <GLFW/glfw3.h>
@@ -11,6 +12,8 @@ int main() {
 	InitAPI();
 
 	GameManager gameManager;
+
+	Level level((char*)"1.txt", 4, 4);
 
 	gameManager.MainLoop();
 

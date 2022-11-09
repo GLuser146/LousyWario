@@ -160,8 +160,13 @@
     <ClInclude Include="Window.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="block.frag" />
+    <None Include="block.vert" />
     <None Include="player.frag" />
     <None Include="player.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="1.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
