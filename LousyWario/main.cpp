@@ -13,8 +13,6 @@ int main() {
 
 	GameManager gameManager;
 
-	Level level((char*)"1.txt", 4, 4);
-
 	gameManager.MainLoop();
 
 	return 0;

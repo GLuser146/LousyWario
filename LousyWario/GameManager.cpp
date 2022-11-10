@@ -7,12 +7,14 @@
 #include "Window.hpp"
 #include "GameManager.hpp"
 #include "Object.hpp"
+#include "World.hpp"
 
 float deltaTime = 0;
 float lastFrame = 0;;
 
 GameManager::GameManager() {
 	player = Player();
+	world = World();
 }
 
 void GameManager::MainLoop() {

@@ -48,6 +48,9 @@
     <ClCompile Include="Level.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\glad.hpp">
@@ -86,6 +89,9 @@
     <ClInclude Include="Level.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="World.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="player.vert">
@@ -102,7 +108,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="1.txt">
+    <Text Include="test.lvl">
       <Filter>Levels</Filter>
     </Text>
   </ItemGroup>

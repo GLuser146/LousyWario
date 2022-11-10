@@ -8,6 +8,7 @@
 #include "Window.hpp"
 #include "Player.hpp"
 #include "Object.hpp"
+#include "World.hpp"
 
 
 #define FIXED_UPDATE_FREQUENCY 0.0167 // seconds
@@ -23,6 +24,7 @@ public:
 	void MainLoop();
 
 	Player player;
+	World world;
 private:
 
 	void UpdateDeltaTime();

@@ -144,6 +144,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Window.cpp" />
+    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\glad.hpp" />
@@ -158,6 +159,7 @@
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="Shader.hpp" />
     <ClInclude Include="Window.hpp" />
+    <ClInclude Include="World.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="block.frag" />
@@ -166,7 +168,7 @@
     <None Include="player.vert" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="1.txt" />
+    <Text Include="test.lvl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

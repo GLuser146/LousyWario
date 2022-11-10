@@ -80,3 +80,10 @@ Level::Level(char* path, int xSize, int ySize) {
 	shader = CreateShader((char*)"block.vert", (char*)"block.frag");
 
 }
+
+void Level::Draw() {
+	glUseProgram(shader.program);
+	glBindVertexArray(object.VAO); 
+
+	glDrawElementsInstanced(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0, blockDat.size() / 3);
+}

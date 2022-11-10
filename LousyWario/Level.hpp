@@ -17,6 +17,7 @@ class Level {
 public:
 	Level() { std::cout << "\033[33m" << "WARNING: No level path provided" << "\033[0m\n"; }
 	Level(char* path, int xSize, int ySize);
+	void Draw();
 
 	int xSize, ySize;
 private:
