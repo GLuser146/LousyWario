@@ -9,6 +9,7 @@
 #include "Shader.hpp"
 #include "Level.hpp"
 #include "Window.hpp"
+#include "ImageLoader.hpp"
 
 class World {
 public:
@@ -16,6 +17,8 @@ public:
 	void Draw();
 
 	std::vector<Level> levels;
+	std::vector<GLuint> textures;
+
 	int currentLevel;
 private:
 };

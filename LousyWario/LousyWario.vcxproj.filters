@@ -22,6 +22,9 @@
     <Filter Include="Levels">
       <UniqueIdentifier>{54e651a8-aa04-4beb-8739-d8aa2ede4105}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sprites">
+      <UniqueIdentifier>{a5230faa-d51d-4085-86b0-5823009a5b52}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -49,6 +52,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="World.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageLoader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -111,5 +117,10 @@
     <Text Include="test.lvl">
       <Filter>Levels</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\dirt.jpg">
+      <Filter>Sprites</Filter>
+    </Image>
   </ItemGroup>
 </Project>

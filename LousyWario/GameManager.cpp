@@ -13,8 +13,7 @@ float deltaTime = 0;
 float lastFrame = 0;;
 
 GameManager::GameManager() {
-	player = Player();
-	world = World();
+	
 }
 
 void GameManager::MainLoop() {
@@ -56,5 +55,12 @@ float cubeVertices[8] = {
 unsigned int cubeIndices[6] = {
 	0, 1, 2,
 	1, 2, 3
+};
+
+float cubeTexCoords[8] = {
+	0.0, 0.0,
+	0.0, 1.0,
+	1.0, 0.0,
+	1.0, 1.0
 };
 /////

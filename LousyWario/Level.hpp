@@ -1,6 +1,7 @@
 #pragma once
 
 #include "glad.h"
+#include <glm/glm.hpp>
 
 #include <iostream>
 #include <vector>
@@ -12,6 +13,12 @@
 #define DIRT '0'
 
 #define BLOCK_SIZE 0.1
+#define CHUNK_SIZE 8
+
+typedef struct Chunk {
+	glm::vec2 pos[CHUNK_SIZE][CHUNK_SIZE];
+	int type[CHUNK_SIZE][CHUNK_SIZE];
+};
 
 class Level {
 public:
@@ -20,6 +27,8 @@ public:
 	void Draw();
 
 	int xSize, ySize;
+
+	Chunk** chunks;
 private:
 	char** levelDat;
 	InstancedObject object;
