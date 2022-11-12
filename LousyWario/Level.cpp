@@ -24,14 +24,14 @@ Level::Level(char* path, int xSize, int ySize) {
 	std::string level = ReadFile(path);
 
 
-	levelDat = new char* [ySize];
+	levelDat = new char* [xSize];
 
 	int atIndex = 0;
-	for (int y = 0; y < ySize; y++) {
-		levelDat[y] = new char[xSize];
-		for (int x = 0; x < xSize; x++) {		
+	for (int x = 0; x < xSize; x++) {
+		levelDat[x] = new char[ySize];
+		for (int y = 0; y < ySize; y++) {		
 			if (level[atIndex] != '\n') {
-				levelDat[y][x] = level[atIndex];
+				levelDat[x][y] = level[atIndex];
 				std::cout << level[atIndex] << " " << x << " " << y << "\n";
 			}
 			atIndex++;
@@ -43,21 +43,20 @@ Level::Level(char* path, int xSize, int ySize) {
 		for (int y = 0; y < ySize; y++) {
 			//printf("%c  %i %i\n", levelDat[x][y], x, y);
 				if (levelDat[x][y] != AIR) {
-					blockDat.push_back(y * BLOCK_SIZE);
 					blockDat.push_back(x * BLOCK_SIZE);
+					blockDat.push_back(y * BLOCK_SIZE);
 					switch (levelDat[x][y]) {
 					case DIRT:
-						blockDat.push_back(0);
+						blockDat.push_back(1);
 						break;
 					default:
-						blockDat.push_back(-1);
+						blockDat.push_back(0);
 						break;
 
 					}
 				}
 		}
 	}
-
 
 
 	////////
