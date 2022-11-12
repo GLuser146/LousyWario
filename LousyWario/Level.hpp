@@ -5,12 +5,13 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 #include "Object.hpp"
 #include "Shader.hpp"
 
 #define AIR ' '
-#define DIRT '0'
+#define DIRT '1'
 
 #define BLOCK_SIZE 0.1
 #define CHUNK_SIZE 8
@@ -28,9 +29,9 @@ public:
 
 	int xSize, ySize;
 
-	Chunk** chunks;
+	std::vector<std::vector<Chunk>> chunks;
 private:
-	char** levelDat;
+	std::vector<std::vector<char>> levelDat;
 	InstancedObject object;
 	Shader shader;
 

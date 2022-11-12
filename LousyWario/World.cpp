@@ -14,7 +14,7 @@
 World::World() {
 	currentLevel = 0;
 
-	levels.push_back(Level((char*)"test.lvl", 8, 8));
+	levels.push_back(Level((char*)"test.lvl", 16, 8));
 
 	textures.push_back(LoadImage((char*)"dirt.png"));
 

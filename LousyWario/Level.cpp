@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 #include "glad.h"
 #include <glm/glm.hpp>
@@ -11,46 +12,51 @@
 
 Level::Level(char* path, int xSize, int ySize) {
 
-	if (xSize/8 != floor(xSize/8) || ySize/8 != floor(ySize/8)) {
+	if ((float)xSize/8 != floor(xSize/8) || (float)ySize/8 != floor(ySize/8)) {
 		std::cout << "\033[31m" << "ERROR: Level " << "\033[32m" << path << "\033[31m" << " size not divisible by 8 (standard"
 			<< " chunk size)." << "\033[0m\n";
 	}
-	chunks = new Chunk * [floor(xSize / 8)];
-	for (int i = 0; i < floor(xSize / 8); i++) {
-		chunks[i] = new Chunk[floor(ySize / 8)];
+	
+	for (int x = 0; x < floor(xSize / 8); x++) {
+		std::vector<Chunk> row;
+		for (int y = 0; y < floor(ySize / 8); y++) {
+			Chunk chunk;
+			row.push_back(chunk);
+		}
+		chunks.push_back(row);
+		row.clear();
 	}
 
 	// LOADING THE LEVEL
 	std::string level = ReadFile(path);
 
+	std::erase_if(level,
+		[](auto ch)
+		{
+			return (ch == '\n');
+		});
 
-	levelDat = new char* [ySize];
-
-	int atIndex = 0;
-	for (int y = 0; y < ySize; y++) {
-		levelDat[y] = new char[xSize];
-		for (int x = 0; x < xSize; x++) {		
-			if (level[atIndex] != '\n') {
-				levelDat[y][x] = level[atIndex];
-				std::cout << level[atIndex] << " " << x << " " << y << "\n";
-			}
-			atIndex++;
+	for (int x = 0; x < xSize; x++) {
+		std::vector<char> row;
+		for (int y = 0; y < ySize; y++) {
+			row.push_back(level[y*xSize+x]);			
 		}
+		levelDat.push_back(row);
+		row.clear();
 	}
 
 
 	for (int x = 0; x < xSize; x++) {
 		for (int y = 0; y < ySize; y++) {
-			//printf("%c  %i %i\n", levelDat[x][y], x, y);
 				if (levelDat[x][y] != AIR) {
-					blockDat.push_back(y * BLOCK_SIZE);
 					blockDat.push_back(x * BLOCK_SIZE);
+					blockDat.push_back((ySize - y - 1) * BLOCK_SIZE);
 					switch (levelDat[x][y]) {
 					case DIRT:
-						blockDat.push_back(0);
+						blockDat.push_back(1);
 						break;
 					default:
-						blockDat.push_back(-1);
+						blockDat.push_back(0);
 						break;
 
 					}
@@ -58,6 +64,16 @@ Level::Level(char* path, int xSize, int ySize) {
 		}
 	}
 
+	for (int x = 0; x <= xSize-8; x += 8) {
+		for (int y = 0; y <= ySize-8; y += 8) {
+			for (int x_ = 0; x_ < 8; x_++) {
+				for (int y_ = 0; y_ < 8; y_++) {
+					chunks[x/8][y/8].pos[x_][y_] = glm::vec2((x + x_) * CHUNK_SIZE, (y + y_) * CHUNK_SIZE);
+					chunks[x/8][y/8].type[x_][y_] = levelDat[x + x_][y + y_]; //PAIN IS VIRTUE PAIN IS VIRTUE PAIN IS VIRTUE PAIN IS VIRTUE
+				}
+			}
+		}
+	}
 
 
 	////////

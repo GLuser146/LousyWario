@@ -4,11 +4,13 @@
 #include <functional>
 #include <algorithm>
 #include <cmath>
+#include <vector>
 
 #include "Object.hpp"
 #include "Shader.hpp"
 #include "Window.hpp"
 #include "InputManager.hpp"
+#include "Level.hpp"
 
 #include "glad.h"
 #include <GLFW/glfw3.h>
@@ -21,6 +23,8 @@ public:
 	void Draw();
 
 	void Movement();
+	void UpdateBBOX();
+	void Collision(std::vector<std::vector<Chunk>> chunks);
 
 	Collider collider;
 private:

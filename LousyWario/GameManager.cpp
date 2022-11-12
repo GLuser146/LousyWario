@@ -36,6 +36,8 @@ void GameManager::FixedUpdate() {
 		sinceLastUpdate = glfwGetTime();
 
 		player.Movement();
+		player.UpdateBBOX();
+		player.Collision(world.levels[world.currentLevel].chunks);
 	}
 }
 
