@@ -23,7 +23,6 @@ public:
 	void Draw();
 
 	void Movement();
-	void UpdateBBOX();
 	void Collision(std::vector<std::vector<Chunk>> chunks);
 
 	Collider collider;

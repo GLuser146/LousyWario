@@ -8,7 +8,7 @@ in vec2 texCoord;
 uniform sampler2D dirtTex;
 
 void main(){
-	if(type == 1){
+	if(type == 1){ 
 		oColor = texture(dirtTex, texCoord);
 	}
 	else{
