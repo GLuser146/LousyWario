@@ -90,17 +90,6 @@ void Player::Collision(std::vector<std::vector<Chunk>> chunks) {
 	glm::vec2 bbox_bottomleft = collider.bbox_bottomleft * exp;
 	glm::vec2 bbox_bottomright = collider.bbox_bottomright * exp;
 
-
-	glm::vec2 topleft_chunkpos = glm::vec2(
-		);
-
-	glm::vec2 topright_chunkpos = glm::vec2(,
-		);
-
-	glm::vec2 bottomleft_chunkpos = glm::vec2(,
-		);
-
-
 	 
 	Chunk bottomright_chunk = chunks[(int)std::clamp((float)floor(bbox_bottomright.x / 8), (float)0, (float)chunks.size() - 1)]
 		[(int)std::clamp((float)floor(bbox_bottomright.y / 8), (float)0, (float)chunks[0].size() - 1)];
@@ -113,4 +102,6 @@ void Player::Collision(std::vector<std::vector<Chunk>> chunks) {
 
 	Chunk topleft_chunk = chunks[(int)std::clamp((float)floor(bbox_topleft.x / 8), (float)0, (float)chunks.size() - 1)]
 		[(int)std::clamp((float)floor(bbox_topleft.y / 8), (float)0, (float)chunks[0].size() - 1)];
+
+	glm::vec2 topleft _index = glm::vec2(bbox_topleft.x % 8, bbox_topleft.y % 8);
 }		
